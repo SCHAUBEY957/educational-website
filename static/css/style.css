@@ -1,14 +1,15 @@
 /* =========================================================
    BRILLIANT PHYSICS TUTORIAL
-   RESPONSIVE / ALL DEVICES CSS
-   Mobile • Tablet • Laptop • Desktop • 4K
+   FINAL RESPONSIVE CSS
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+@import url(
+'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap'
+);
 
 
 /* =========================================================
-   GLOBAL RESET
+   RESET
 ========================================================= */
 
 * {
@@ -19,31 +20,16 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
 }
 
 body {
-    width: 100%;
     min-height: 100vh;
-
-    margin: 0;
 
     font-family: "Inter", sans-serif;
 
     color: #171b2d;
 
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(91, 72, 218, 0.06),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 50%,
-            rgba(20, 160, 240, 0.05),
-            transparent 30%
-        ),
-        #ffffff;
+    background: #ffffff;
 
     line-height: 1.6;
 
@@ -51,44 +37,19 @@ body {
 }
 
 img {
-    display: block;
     max-width: 100%;
-    height: auto;
+    display: block;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 button,
 input,
 textarea,
 select {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   COMMON CONTAINER
-========================================================= */
-
-.navbar,
-.hero-container,
-.feature-container,
-.content-section,
-.why-container,
-.professor-profile,
-.cta-section,
-.footer-container,
-.footer-bottom {
-    width: min(1200px, calc(100% - 40px));
-    margin-left: auto;
-    margin-right: auto;
+    font-family: inherit;
 }
 
 
@@ -99,28 +60,33 @@ button {
 .site-header {
     position: sticky;
     top: 0;
+
     z-index: 9999;
 
     width: 100%;
 
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255,255,255,0.96);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(15px);
 
-    border-bottom: 1px solid #eceef4;
+    border-bottom: 1px solid #e9eaf0;
 
     box-shadow:
-        0 4px 25px rgba(20, 25, 50, 0.05);
+        0 4px 20px rgba(20,25,50,0.05);
 }
 
 .navbar {
+    width: min(1250px, calc(100% - 40px));
+
     min-height: 76px;
 
+    margin: auto;
+
     display: flex;
+
     align-items: center;
 
-    gap: 20px;
+    gap: 25px;
 }
 
 
@@ -130,13 +96,12 @@ button {
 
 .brand {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 
     flex-shrink: 0;
-
-    min-width: 230px;
 }
 
 .brand img {
@@ -144,23 +109,23 @@ button {
     height: 48px;
 
     object-fit: contain;
-
-    flex-shrink: 0;
 }
 
 .brand-text {
     display: flex;
+
     flex-direction: column;
 
     line-height: 1.15;
 }
 
 .brand-text strong {
+    color: #1b1f2d;
+
     font-family: "Poppins", sans-serif;
 
-    color: #171b28;
+    font-size: 0.82rem;
 
-    font-size: 0.9rem;
     font-weight: 800;
 
     white-space: nowrap;
@@ -169,7 +134,8 @@ button {
 .brand-text span {
     color: #5b48da;
 
-    font-size: 0.6rem;
+    font-size: 0.57rem;
+
     font-weight: 800;
 
     letter-spacing: 1.4px;
@@ -177,19 +143,19 @@ button {
 
 
 /* =========================================================
-   NAVIGATION
+   NAV
 ========================================================= */
 
 .main-nav {
     flex: 1;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    gap: 2px;
-
-    min-width: 0;
+    gap: 3px;
 }
 
 .main-nav a {
@@ -197,49 +163,42 @@ button {
 
     border-radius: 8px;
 
-    color: #202432;
+    color: #292e3d;
 
-    font-size: 0.82rem;
+    font-size: 0.76rem;
+
     font-weight: 600;
 
     white-space: nowrap;
 
-    transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .main-nav a:hover {
     color: #5b48da;
-    background: #f2efff;
 
-    transform: translateY(-1px);
+    background: #f0edff;
 }
 
 
 /* =========================================================
-   NAV REGISTER
+   REGISTER BUTTON
 ========================================================= */
 
 .nav-register {
     flex-shrink: 0;
 
-    padding: 12px 24px;
+    padding: 12px 22px;
 
     border-radius: 9px;
 
     background: #171c21;
 
-    color: #ffffff !important;
+    color: white;
 
-    font-size: 0.82rem;
+    font-size: 0.76rem;
+
     font-weight: 700;
-
-    white-space: nowrap;
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12);
 
     transition: 0.3s ease;
 }
@@ -256,69 +215,69 @@ button {
 ========================================================= */
 
 .hero {
-    width: 100%;
-
-    overflow: hidden;
-
     background:
         linear-gradient(
             120deg,
-            #f4f5ff 0%,
-            #fbf9ff 50%,
-            #f3f1ff 100%
+            #f5f4ff,
+            #ffffff 50%,
+            #f5f8ff
         );
 }
 
 .hero-container {
-    min-height: 580px;
+    width: min(1250px, calc(100% - 40px));
+
+    min-height: 590px;
+
+    margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
+        minmax(0, 1fr)
+        minmax(350px, 0.85fr);
 
     align-items: center;
 
-    gap: clamp(30px, 5vw, 80px);
+    gap: 60px;
 }
 
 .hero-content {
     min-width: 0;
-
-    padding: 70px 0;
 }
 
 .hero-badge {
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
 
-    padding: 7px 14px;
+    margin-bottom: 17px;
 
-    margin-bottom: 18px;
+    padding: 7px 13px;
 
     border-radius: 30px;
 
-    background: #e9e5ff;
+    background: #ebe7ff;
 
     color: #5b48da;
 
-    font-size: 0.7rem;
+    font-size: 0.62rem;
+
     font-weight: 800;
+
+    letter-spacing: 1.3px;
 }
 
 .hero h1 {
-    margin: 0 0 20px;
+    margin-bottom: 20px;
 
     font-family: "Poppins", sans-serif;
 
-    color: #191d29;
+    color: #1c2130;
 
-    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
 
-    line-height: 1.08;
+    line-height: 1.05;
 
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
 }
 
 .hero h1 span {
@@ -328,18 +287,18 @@ button {
 .hero-description {
     max-width: 620px;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
-    color: #626a7a;
+    color: #687082;
 
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-size: 0.9rem;
 
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   BUTTONS
+   HERO BUTTONS
 ========================================================= */
 
 .hero-buttons {
@@ -351,19 +310,21 @@ button {
 }
 
 .primary-btn,
-.secondary-btn,
-.cta-button {
+.secondary-btn {
     min-height: 48px;
 
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 12px 23px;
+    padding: 11px 22px;
 
     border-radius: 9px;
 
-    font-size: 0.82rem;
+    font-size: 0.75rem;
+
     font-weight: 700;
 
     transition: 0.3s ease;
@@ -372,25 +333,22 @@ button {
 .primary-btn {
     background: #5b48da;
 
-    color: white !important;
+    color: white;
 
     box-shadow:
-        0 12px 25px rgba(91, 72, 218, 0.22);
+        0 12px 25px rgba(91,72,218,0.22);
 }
 
 .primary-btn:hover {
     background: #4936c6;
 
     transform: translateY(-3px);
-
-    box-shadow:
-        0 18px 32px rgba(91, 72, 218, 0.28);
 }
 
 .secondary-btn {
-    background: white;
+    border: 1px solid #d9d5f4;
 
-    border: 1px solid #d8d3f5;
+    background: white;
 
     color: #5b48da;
 }
@@ -411,29 +369,29 @@ button {
 
     flex-wrap: wrap;
 
-    gap: 25px;
+    gap: 35px;
 
     margin-top: 35px;
 }
 
 .hero-stats div {
     display: flex;
+
     flex-direction: column;
 }
 
 .hero-stats strong {
-    color: #202436;
+    color: #252a3b;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 1.05rem;
+    font-size: 0.9rem;
 }
 
 .hero-stats span {
-    color: #858c9a;
+    color: #8a91a0;
 
-    font-size: 0.63rem;
-    font-weight: 600;
+    font-size: 0.58rem;
 }
 
 
@@ -444,41 +402,39 @@ button {
 .hero-visual {
     position: relative;
 
-    width: 100%;
     min-width: 0;
 
     height: 500px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .hero-circle {
     position: absolute;
 
-    width: min(390px, 70%);
+    width: 380px;
+
     aspect-ratio: 1;
 
-    border: 2px dashed #c9c3f5;
+    border: 2px dashed #ccc6f6;
 
     border-radius: 50%;
-
-    animation: rotate 25s linear infinite;
 }
 
 .hero-circle-small {
     position: absolute;
 
-    width: min(300px, 55%);
+    width: 285px;
+
     aspect-ratio: 1;
 
     border-radius: 50%;
 
-    background: #e8e4ff;
-
-    box-shadow:
-        0 30px 70px rgba(70, 55, 160, 0.14);
+    background: #e9e5ff;
 }
 
 .professor-card {
@@ -490,8 +446,8 @@ button {
 }
 
 .professor-ring {
-    width: clamp(190px, 23vw, 270px);
-    height: clamp(240px, 28vw, 325px);
+    width: 245px;
+    height: 315px;
 
     overflow: hidden;
 
@@ -500,7 +456,7 @@ button {
     border-radius: 150px 150px 25px 25px;
 
     box-shadow:
-        0 25px 55px rgba(40, 35, 100, 0.18);
+        0 25px 55px rgba(40,35,100,0.18);
 }
 
 .professor-ring img {
@@ -518,102 +474,37 @@ button {
     z-index: 10;
 
     display: flex;
+
     flex-direction: column;
 
-    padding: 9px 15px;
+    width: max-content;
 
-    margin-top: -5px;
+    max-width: 100%;
+
+    margin: -4px auto 0;
+
+    padding: 9px 14px;
 
     border-radius: 10px;
 
     background: white;
 
     box-shadow:
-        0 10px 25px rgba(20, 20, 60, 0.1);
+        0 10px 25px rgba(20,20,60,0.1);
 }
 
 .professor-label span {
     color: #5b48da;
 
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+
     font-weight: 800;
 }
 
 .professor-label strong {
-    color: #25293a;
-
-    font-size: 0.75rem;
-}
-
-
-/* =========================================================
-   FLOATING CARDS
-========================================================= */
-
-.floating-card {
-    position: absolute;
-
-    z-index: 20;
-
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-
-    padding: 11px 14px;
-
-    border-radius: 11px;
-
-    background: white;
-
-    box-shadow:
-        0 15px 35px rgba(40, 35, 90, 0.12);
-
-    animation: floating 4s ease-in-out infinite;
-}
-
-.card-top {
-    top: 55px;
-    left: 0;
-}
-
-.card-bottom {
-    bottom: 55px;
-    left: 5px;
-
-    animation-delay: 1s;
-}
-
-.floating-icon {
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 9px;
-
-    background: #eeeaff;
-}
-
-.floating-card div:last-child {
-    display: flex;
-    flex-direction: column;
-}
-
-.floating-card strong {
-    color: #292d3d;
+    color: #252a3b;
 
     font-size: 0.68rem;
-}
-
-.floating-card small {
-    color: #858c99;
-
-    font-size: 0.57rem;
 }
 
 
@@ -624,12 +515,13 @@ button {
 .physics-symbol {
     position: absolute;
 
-    z-index: 20;
+    z-index: 10;
 
     width: 55px;
-    aspect-ratio: 1;
+    height: 55px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -639,27 +531,26 @@ button {
 
     color: #5b48da;
 
-    font-family: "Poppins", sans-serif;
+    font-size: 0.6rem;
 
-    font-size: 0.65rem;
     font-weight: 800;
 
     box-shadow:
-        0 10px 25px rgba(50, 40, 100, 0.12);
+        0 10px 25px rgba(40,35,100,0.1);
 }
 
 .symbol-one {
     top: 45px;
-    right: 20px;
+    right: 10px;
 }
 
 .symbol-two {
-    bottom: 50px;
-    right: 5px;
+    bottom: 45px;
+    right: 0;
 }
 
 .symbol-three {
-    top: 125px;
+    top: 100px;
     left: 5px;
 }
 
@@ -671,7 +562,7 @@ button {
 .quick-features {
     position: relative;
 
-    z-index: 30;
+    z-index: 20;
 
     margin-top: -35px;
 
@@ -679,9 +570,14 @@ button {
 }
 
 .feature-container {
+    width: min(1150px, calc(100% - 40px));
+
+    margin: auto;
+
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, 1fr);
 
     overflow: hidden;
 
@@ -690,20 +586,19 @@ button {
     background: white;
 
     box-shadow:
-        0 15px 45px rgba(30, 35, 80, 0.1);
+        0 15px 45px rgba(30,35,80,0.1);
 }
 
 .quick-feature {
-    min-width: 0;
-
     display: flex;
+
     align-items: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    padding: 21px 17px;
+    padding: 22px 17px;
 
-    border-right: 1px solid #edf0f5;
+    border-right: 1px solid #eceef3;
 }
 
 .quick-feature:last-child {
@@ -715,6 +610,7 @@ button {
     height: 43px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -723,47 +619,44 @@ button {
     border-radius: 11px;
 
     background: #f0edff;
-
-    font-size: 1.15rem;
-}
-
-.quick-feature div:last-child {
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .quick-feature strong {
-    color: #252a3a;
+    display: block;
 
-    font-size: 0.72rem;
+    color: #292e3e;
 
-    white-space: nowrap;
+    font-size: 0.67rem;
 }
 
 .quick-feature span {
+    display: block;
+
     color: #8a91a0;
 
-    font-size: 0.59rem;
+    font-size: 0.55rem;
 }
 
 
 /* =========================================================
-   SECTION
+   COMMON SECTION
 ========================================================= */
 
 .content-section {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: min(1200px, calc(100% - 40px));
 
-    scroll-margin-top: 100px;
+    margin:
+        100px
+        auto;
 }
 
 .section-heading {
     max-width: 720px;
 
-    margin: 0 auto 45px;
+    margin:
+        0
+        auto
+        45px;
 
     text-align: center;
 }
@@ -772,7 +665,8 @@ button {
 .section-label {
     color: #5b48da;
 
-    font-size: 0.67rem;
+    font-size: 0.62rem;
+
     font-weight: 800;
 
     letter-spacing: 2px;
@@ -781,11 +675,11 @@ button {
 .section-heading h2 {
     margin: 9px 0 12px;
 
+    color: #202536;
+
     font-family: "Poppins", sans-serif;
 
-    color: #202434;
-
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
 
     line-height: 1.2;
 }
@@ -799,7 +693,7 @@ button {
 .section-heading p {
     color: #747b8c;
 
-    font-size: 0.84rem;
+    font-size: 0.78rem;
 }
 
 
@@ -811,7 +705,7 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(4, 1fr);
 
     gap: 20px;
 }
@@ -819,39 +713,37 @@ button {
 .course-card {
     position: relative;
 
-    min-width: 0;
+    overflow: hidden;
 
     padding: 27px 22px;
 
-    overflow: hidden;
-
-    border: 1px solid #e8eaf1;
+    border: 1px solid #e7e9f0;
 
     border-radius: 17px;
 
     background: white;
 
     box-shadow:
-        0 10px 35px rgba(25, 30, 70, 0.05);
+        0 10px 35px rgba(25,30,70,0.05);
 
-    transition: 0.35s ease;
+    transition: 0.3s ease;
 }
 
 .course-card:hover {
     transform: translateY(-7px);
 
     box-shadow:
-        0 20px 45px rgba(50, 45, 120, 0.12);
+        0 20px 45px rgba(50,45,120,0.12);
 }
 
 .course-card.featured {
-    border: none;
+    border: 0;
 
     background:
         linear-gradient(
             145deg,
             #5140cf,
-            #7563e8
+            #7664e8
         );
 }
 
@@ -859,49 +751,49 @@ button {
     position: absolute;
 
     top: 5px;
-    right: 13px;
+    right: 14px;
 
-    color: rgba(91, 72, 218, 0.08);
+    color: rgba(91,72,218,0.09);
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 2.8rem;
+    font-size: 2.7rem;
+
     font-weight: 800;
 }
 
 .featured .course-number {
-    color: rgba(255, 255, 255, 0.12);
+    color: rgba(255,255,255,0.13);
 }
 
 .course-icon {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 
     border-radius: 13px;
 
     background: #f0edff;
-
-    font-size: 1.3rem;
 }
 
 .featured .course-icon {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
 }
 
 .course-card h3 {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 
-    color: #24283a;
+    color: #252a3b;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .featured h3 {
@@ -909,11 +801,11 @@ button {
 }
 
 .course-card p {
-    min-height: 82px;
+    min-height: 80px;
 
-    color: #7b8291;
+    color: #788091;
 
-    font-size: 0.74rem;
+    font-size: 0.7rem;
 
     line-height: 1.65;
 }
@@ -923,13 +815,10 @@ button {
 }
 
 .course-card a {
-    display: inline-block;
-
-    margin-top: 13px;
-
     color: #5b48da;
 
-    font-size: 0.72rem;
+    font-size: 0.67rem;
+
     font-weight: 800;
 }
 
@@ -939,40 +828,38 @@ button {
 
 
 /* =========================================================
-   EXPLORE CARDS
+   EXPLORE
 ========================================================= */
 
 .explore-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3, 1fr);
 
     gap: 25px;
 }
 
 .explore-card {
-    min-width: 0;
-
     overflow: hidden;
 
-    border: 1px solid #e8eaf1;
+    border: 1px solid #e6e8ef;
 
     border-radius: 19px;
 
     background: white;
 
     box-shadow:
-        0 10px 35px rgba(20, 25, 60, 0.06);
+        0 10px 35px rgba(20,25,60,0.06);
 
-    transition: 0.35s ease;
+    transition: 0.3s ease;
 }
 
 .explore-card:hover {
     transform: translateY(-7px);
 
     box-shadow:
-        0 20px 45px rgba(30, 25, 90, 0.12);
+        0 20px 45px rgba(30,25,90,0.12);
 }
 
 .explore-card > img {
@@ -980,6 +867,20 @@ button {
     height: 220px;
 
     object-fit: cover;
+
+    object-position: center;
+}
+
+.explore-card:nth-child(1) > img {
+    object-position: center top;
+}
+
+.explore-card:nth-child(2) > img {
+    object-position: center center;
+}
+
+.explore-card:nth-child(3) > img {
+    object-position: center top;
 }
 
 .explore-card > div {
@@ -989,7 +890,8 @@ button {
 .explore-card span {
     color: #5b48da;
 
-    font-size: 0.6rem;
+    font-size: 0.57rem;
+
     font-weight: 800;
 
     letter-spacing: 1px;
@@ -998,29 +900,32 @@ button {
 .explore-card h3 {
     margin: 6px 0;
 
+    color: #252a3b;
+
     font-family: "Poppins", sans-serif;
 
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .explore-card p {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 
-    color: #7a8190;
+    color: #788091;
 
-    font-size: 0.74rem;
+    font-size: 0.7rem;
 }
 
 .explore-card a {
     color: #5b48da;
 
-    font-size: 0.72rem;
+    font-size: 0.66rem;
+
     font-weight: 800;
 }
 
 
 /* =========================================================
-   WHY SECTION
+   ACHIEVEMENTS
 ========================================================= */
 
 .why-section {
@@ -1032,21 +937,23 @@ button {
 }
 
 .why-container {
+    width: min(1200px, calc(100% - 40px));
+
+    margin: auto;
+
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.1fr);
+        0.9fr
+        1.1fr;
 
     align-items: center;
 
-    gap: clamp(40px, 7vw, 80px);
+    gap: 70px;
 }
 
 .why-image {
     position: relative;
-
-    min-width: 0;
 
     padding: 20px;
 }
@@ -1054,15 +961,11 @@ button {
 .image-back {
     position: absolute;
 
-    top: 8%;
-    left: 0;
-
-    width: 82%;
-    height: 85%;
+    inset: 8% 8% 5% 0;
 
     border-radius: 25px;
 
-    background: #dcd7ff;
+    background: #ddd8ff;
 
     transform: rotate(-6deg);
 }
@@ -1080,19 +983,17 @@ button {
     border-radius: 25px;
 
     box-shadow:
-        0 25px 50px rgba(40, 35, 100, 0.15);
-}
-
-.why-content {
-    min-width: 0;
+        0 25px 50px rgba(40,35,100,0.15);
 }
 
 .why-content h2 {
     margin: 10px 0 17px;
 
+    color: #202536;
+
     font-family: "Poppins", sans-serif;
 
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
 
     line-height: 1.2;
 }
@@ -1106,28 +1007,28 @@ button {
 
     color: #697184;
 
-    font-size: 0.84rem;
+    font-size: 0.78rem;
 }
 
 .check-list {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2,1fr);
 
     gap: 13px;
-
-    margin-bottom: 28px;
 }
 
 .check-list div {
     display: flex;
+
     align-items: center;
 
     gap: 8px;
 
-    color: #414858;
+    color: #454c5c;
 
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+
     font-weight: 600;
 }
 
@@ -1136,10 +1037,9 @@ button {
     height: 23px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
-
-    flex-shrink: 0;
 
     border-radius: 50%;
 
@@ -1154,32 +1054,34 @@ button {
 ========================================================= */
 
 .professor-profile {
+    width: min(1000px, 100%);
+
+    margin: auto;
+
+    padding: 38px;
+
     display: grid;
 
     grid-template-columns:
-        minmax(220px, 0.7fr)
-        minmax(0, 1.3fr);
+        0.7fr
+        1.3fr;
 
     align-items: center;
 
-    gap: clamp(30px, 6vw, 65px);
+    gap: 60px;
 
-    padding: clamp(25px, 5vw, 40px);
+    border: 1px solid #e5e7ee;
 
     border-radius: 25px;
 
     background: white;
 
     box-shadow:
-        0 15px 50px rgba(25, 30, 70, 0.08);
-}
-
-.professor-photo {
-    min-width: 0;
+        0 15px 50px rgba(25,30,70,0.08);
 }
 
 .professor-photo img {
-    width: min(270px, 100%);
+    width: 260px;
     height: 330px;
 
     margin: auto;
@@ -1204,41 +1106,39 @@ button {
 
     color: #5b48da;
 
-    font-size: 0.59rem;
+    font-size: 0.55rem;
+
     font-weight: 800;
 
     letter-spacing: 1px;
 }
 
-.professor-info {
-    min-width: 0;
-}
-
 .professor-info h3 {
     margin: 12px 0 4px;
 
-    color: #202434;
+    color: #202536;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-size: 1.8rem;
 }
 
-.professor-info .experience {
-    margin-bottom: 14px;
+.experience {
+    margin-bottom: 15px;
 
     color: #5b48da;
 
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+
     font-weight: 700;
 }
 
 .professor-info > p:not(.experience) {
     margin-bottom: 23px;
 
-    color: #6d7484;
+    color: #70788a;
 
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .faculty-details {
@@ -1246,24 +1146,25 @@ button {
 
     flex-wrap: wrap;
 
-    gap: 25px;
+    gap: 28px;
 }
 
 .faculty-details div {
     display: flex;
+
     flex-direction: column;
 }
 
 .faculty-details strong {
-    color: #272c3c;
+    color: #292e3e;
 
-    font-size: 0.68rem;
+    font-size: 0.65rem;
 }
 
 .faculty-details span {
     color: #7d8492;
 
-    font-size: 0.65rem;
+    font-size: 0.62rem;
 }
 
 
@@ -1272,7 +1173,13 @@ button {
 ========================================================= */
 
 .cta-section {
-    padding: clamp(35px, 6vw, 55px);
+    width: min(1200px, calc(100% - 40px));
+
+    margin:
+        100px
+        auto;
+
+    padding: 50px;
 
     border-radius: 25px;
 
@@ -1280,13 +1187,10 @@ button {
         linear-gradient(
             120deg,
             #5140cf,
-            #715de5
+            #7664e8
         );
 
     color: white;
-
-    box-shadow:
-        0 25px 55px rgba(80, 60, 190, 0.2);
 }
 
 .cta-content {
@@ -1299,14 +1203,11 @@ button {
     gap: 30px;
 }
 
-.cta-content > div {
-    min-width: 0;
-}
-
 .cta-content > div > span {
-    color: #dcd8ff;
+    color: #ddd8ff;
 
-    font-size: 0.62rem;
+    font-size: 0.58rem;
+
     font-weight: 800;
 
     letter-spacing: 2px;
@@ -1317,356 +1218,29 @@ button {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-
-    line-height: 1.2;
+    font-size: clamp(1.7rem,4vw,2.4rem);
 }
 
 .cta-content p {
     color: #e5e2ff;
 
-    font-size: 0.78rem;
+    font-size: 0.7rem;
 }
 
 .cta-button {
     flex-shrink: 0;
 
-    background: white;
-
-    color: #5140cf !important;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   REGISTRATION PAGE
-========================================================= */
-
-.registration-page {
-    width: 100%;
-
-    min-height: calc(100vh - 76px);
-
-    padding:
-        clamp(40px, 7vw, 80px)
-        20px
-        90px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(91, 72, 218, 0.1),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 55%,
-            rgba(14, 165, 233, 0.07),
-            transparent 30%
-        ),
-        #f8f9ff;
-}
-
-.registration-form {
-    position: relative;
-
-    width: min(720px, 100%);
-
-    padding: clamp(25px, 5vw, 45px);
-
-    overflow: hidden;
-
-    border: 1px solid #e5e7ef;
-
-    border-radius: 24px;
-
-    background: white;
-
-    box-shadow:
-        0 25px 70px rgba(30, 35, 80, 0.12);
-}
-
-.registration-form::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 6px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #5140cf,
-            #7867e8,
-            #5140cf
-        );
-}
-
-.registration-form h2 {
-    margin-bottom: 9px;
-
-    text-align: center;
-
-    color: #1d2232;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: clamp(1.6rem, 5vw, 2rem);
-
-    line-height: 1.2;
-}
-
-.registration-form > p {
-    max-width: 550px;
-
-    margin:
-        0 auto
-        30px;
-
-    text-align: center;
-
-    color: #747b8c;
-
-    font-size: 0.82rem;
-}
-
-.registration-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.registration-form label {
-    margin: 16px 0 7px;
-
-    color: #303647;
-
-    font-size: 0.8rem;
-    font-weight: 700;
-}
-
-.registration-form label:first-of-type {
-    margin-top: 0;
-}
-
-.registration-form input,
-.registration-form select,
-.registration-form textarea {
-    width: 100%;
-
-    border: 1px solid #dfe2eb;
-
-    border-radius: 11px;
-
-    outline: none;
-
-    background: #f9fafc;
-
-    color: #202434;
-
-    font-size: 0.85rem;
-
-    transition: 0.25s ease;
-}
-
-.registration-form input,
-.registration-form select {
-    min-height: 52px;
-
-    padding:
-        0
-        15px;
-}
-
-.registration-form textarea {
-    min-height: 110px;
-
-    padding: 14px 15px;
-
-    resize: vertical;
-}
-
-.registration-form input:focus,
-.registration-form select:focus,
-.registration-form textarea:focus {
-    border-color: #5b48da;
-
-    background: white;
-
-    box-shadow:
-        0 0 0 4px rgba(91, 72, 218, 0.1);
-}
-
-.registration-form input::placeholder,
-.registration-form textarea::placeholder {
-    color: #a0a6b3;
-}
-
-.registration-form button {
-    width: 100%;
-
-    min-height: 55px;
-
-    margin-top: 30px;
-
-    border: 0;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #5b48da,
-            #7563e8
-        );
-
-    color: white;
-
-    font-size: 0.88rem;
-    font-weight: 700;
-
-    box-shadow:
-        0 12px 25px rgba(91, 72, 218, 0.25);
-
-    transition: 0.3s ease;
-}
-
-.registration-form button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 18px 35px rgba(91, 72, 218, 0.32);
-}
-
-
-/* =========================================================
-   SUCCESS PAGE
-========================================================= */
-
-.success-page {
-    width: 100%;
-
-    min-height: calc(100vh - 76px);
-
-    padding: 70px 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(91, 72, 218, 0.1),
-            transparent 30%
-        ),
-        #f8f9ff;
-}
-
-.success-card {
-    width: min(620px, 100%);
-
-    padding: clamp(35px, 7vw, 60px) 30px;
-
-    text-align: center;
-
-    border: 1px solid #e5e7ef;
-
-    border-radius: 25px;
-
-    background: white;
-
-    box-shadow:
-        0 25px 70px rgba(30, 35, 80, 0.12);
-}
-
-.success-icon {
-    width: 78px;
-    height: 78px;
-
-    margin:
-        0 auto
-        20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #e8f9ef;
-
-    color: #18a957;
-
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-.error-icon {
-    background: #fff0f0;
-
-    color: #e53935;
-}
-
-.success-card h1 {
-    margin-bottom: 10px;
-
-    color: #202434;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: clamp(1.6rem, 5vw, 2.1rem);
-
-    line-height: 1.2;
-}
-
-.success-card p {
-    max-width: 500px;
-
-    margin:
-        0 auto
-        28px;
-
-    color: #747b8c;
-
-    font-size: 0.86rem;
-}
-
-.success-card a {
-    display: inline-flex;
-
-    min-height: 48px;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 23px;
+    padding: 13px 24px;
 
     border-radius: 9px;
 
-    background: #5b48da;
+    background: white;
 
-    color: white !important;
+    color: #5140cf;
 
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.7rem;
 
-    transition: 0.3s ease;
-}
-
-.success-card a:hover {
-    background: #4936c6;
-
-    transform: translateY(-2px);
+    font-weight: 800;
 }
 
 
@@ -1677,28 +1251,36 @@ button {
 footer {
     width: 100%;
 
-    padding-top: 55px;
+    padding:
+        55px
+        20px
+        25px;
 
     background: #101322;
 
-    color: #b7bdca;
+    color: #aeb5c3;
 }
 
 .footer-container {
-    padding-bottom: 45px;
+    width: min(1200px, 100%);
+
+    margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.5fr)
-        minmax(150px, 1fr)
-        minmax(180px, 1fr);
+        1.5fr
+        1fr
+        1fr;
 
     gap: 45px;
+
+    padding-bottom: 45px;
 }
 
 .footer-brand {
     display: flex;
+
     align-items: center;
 
     gap: 13px;
@@ -1707,8 +1289,6 @@ footer {
 .footer-brand img {
     width: 55px;
     height: 55px;
-
-    flex-shrink: 0;
 
     padding: 5px;
 
@@ -1724,17 +1304,18 @@ footer {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .footer-brand p {
-    color: #7f8797;
+    color: #818999;
 
-    font-size: 0.68rem;
+    font-size: 0.63rem;
 }
 
 .footer-links {
     display: flex;
+
     flex-direction: column;
 
     gap: 8px;
@@ -1743,9 +1324,7 @@ footer {
 .footer-links a {
     color: #aeb5c3;
 
-    font-size: 0.72rem;
-
-    transition: 0.2s ease;
+    font-size: 0.68rem;
 }
 
 .footer-links a:hover {
@@ -1755,7 +1334,7 @@ footer {
 .footer-address strong {
     color: white;
 
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .footer-address p {
@@ -1763,16 +1342,20 @@ footer {
 
     color: #8991a1;
 
-    font-size: 0.72rem;
+    font-size: 0.67rem;
 }
 
 .footer-bottom {
-    padding:
-        20px
-        0;
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    padding-top: 20px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -1781,223 +1364,368 @@ footer {
 
     color: #727a8b;
 
-    font-size: 0.64rem;
+    font-size: 0.6rem;
 }
 
 
 /* =========================================================
-   ANIMATIONS
+   REGISTRATION
 ========================================================= */
 
-@keyframes floating {
+.registration-page {
+    min-height: calc(100vh - 76px);
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+    padding:
+        80px
+        20px
+        100px;
 
-    50% {
-        transform: translateY(-9px);
-    }
+    display: flex;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(91,72,218,0.09),
+            transparent 30%
+        ),
+        #f8f9ff;
 }
 
-@keyframes rotate {
+.registration-form {
+    width: min(700px, 100%);
 
-    from {
-        transform: rotate(0deg);
-    }
+    padding: 42px;
 
-    to {
-        transform: rotate(360deg);
-    }
+    border: 1px solid #e3e5ed;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 70px rgba(30,35,80,0.12);
+}
+
+.registration-form h2 {
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    color: #202536;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 2rem;
+}
+
+.registration-form > p {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: #747b8c;
+
+    font-size: 0.75rem;
+}
+
+.registration-form form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.registration-form label {
+    margin:
+        14px
+        0
+        6px;
+
+    color: #303647;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dfe2eb;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafbfc;
+
+    color: #202536;
+
+    font-size: 0.78rem;
+
+    transition: 0.25s ease;
+}
+
+.registration-form input,
+.registration-form select {
+    min-height: 50px;
+}
+
+.registration-form textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.registration-form input:focus,
+.registration-form select:focus,
+.registration-form textarea:focus {
+    border-color: #5b48da;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(91,72,218,0.1);
+}
+
+.registration-form button {
+    width: 100%;
+
+    min-height: 53px;
+
+    margin-top: 25px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b48da,
+            #7664e8
+        );
+
+    color: white;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.registration-form button:hover {
+    transform: translateY(-3px);
 }
 
 
 /* =========================================================
-   LARGE DESKTOP
-   1440px+
+   SUCCESS
 ========================================================= */
 
-@media (min-width: 1440px) {
+.success-page {
+    min-height: calc(100vh - 76px);
 
-    .navbar,
-    .hero-container,
-    .feature-container,
-    .content-section,
-    .why-container,
-    .professor-profile,
-    .footer-container,
-    .footer-bottom {
-        width: min(1300px, calc(100% - 80px));
-    }
+    padding:
+        80px
+        20px;
 
-    .hero-container {
-        min-height: 650px;
-    }
+    display: flex;
 
-    .hero h1 {
-        font-size: 4.5rem;
-    }
+    align-items: center;
 
-    .content-section {
-        margin-top: 120px;
-        margin-bottom: 120px;
-    }
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(91,72,218,0.1),
+            transparent 30%
+        ),
+        #f8f9ff;
 }
 
+.success-card {
+    width: min(620px, 100%);
 
-/* =========================================================
-   4K / VERY LARGE SCREENS
-========================================================= */
+    padding: 55px 30px;
 
-@media (min-width: 2000px) {
+    text-align: center;
 
-    .navbar,
-    .hero-container,
-    .feature-container,
-    .content-section,
-    .why-container,
-    .professor-profile,
-    .footer-container,
-    .footer-bottom {
-        width: min(1400px, calc(100% - 120px));
-    }
+    border: 1px solid #e4e6ed;
 
-    body {
-        font-size: 18px;
-    }
+    border-radius: 25px;
 
-    .hero-container {
-        min-height: 720px;
-    }
+    background: white;
 
-    .hero h1 {
-        font-size: 5rem;
-    }
+    box-shadow:
+        0 25px 70px rgba(30,35,80,0.12);
 }
 
+.success-icon {
+    width: 75px;
+    height: 75px;
 
-/* =========================================================
-   TABLET / SMALL LAPTOP
-   769px - 1100px
-========================================================= */
+    margin:
+        0
+        auto
+        20px;
 
-@media (max-width: 1100px) {
+    display: flex;
 
-    .navbar {
-        gap: 12px;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .brand {
-        min-width: 200px;
-    }
+    border-radius: 50%;
 
-    .brand-text strong {
-        font-size: 0.78rem;
-    }
+    background: #e7f8ef;
 
-    .main-nav a {
-        padding: 9px 7px;
+    color: #18a957;
 
-        font-size: 0.72rem;
-    }
+    font-size: 2rem;
 
-    .nav-register {
-        padding: 11px 17px;
+    font-weight: 800;
+}
 
-        font-size: 0.75rem;
-    }
+.success-card h1 {
+    margin-bottom: 10px;
 
-    .hero-container {
-        gap: 25px;
-    }
+    color: #202536;
 
-    .course-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
+    font-family: "Poppins", sans-serif;
 
-    .explore-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
+    font-size: 2rem;
+}
 
-    .explore-card:last-child {
-        grid-column: 1 / -1;
+.success-card p {
+    margin-bottom: 25px;
 
-        max-width: 50%;
+    color: #737b8c;
 
-        margin: auto;
-    }
+    font-size: 0.8rem;
+}
 
-    .why-container {
-        gap: 35px;
-    }
+.success-card a {
+    display: inline-flex;
+
+    padding: 12px 20px;
+
+    margin: 4px;
+
+    border-radius: 9px;
+
+    background: #5b48da;
+
+    color: white;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+.success-card .success-home {
+    background: #171c21;
 }
 
 
 /* =========================================================
    TABLET
-   601px - 768px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        width: calc(100% - 30px);
+    }
+
+    .main-nav a {
+        padding: 9px 7px;
+
+        font-size: 0.68rem;
+    }
+
+    .course-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .explore-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .explore-card:last-child {
+        grid-column: 1 / -1;
+
+        width: 50%;
+
+        margin: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
 ========================================================= */
 
 @media (max-width: 768px) {
-
-    html {
-        scroll-padding-top: 10px;
-    }
 
     .site-header {
         position: relative;
     }
 
     .navbar {
-        width: calc(100% - 28px);
+        width: calc(100% - 24px);
 
         min-height: auto;
 
-        padding: 12px 0;
+        padding:
+            12px 0;
 
         flex-wrap: wrap;
+
+        gap: 10px;
     }
 
     .brand {
-        min-width: 0;
-
         margin-right: auto;
     }
 
-    .brand img {
-        width: 44px;
-        height: 44px;
-    }
-
     .brand-text strong {
-        font-size: 0.76rem;
+        font-size: 0.7rem;
     }
 
     .brand-text span {
-        font-size: 0.53rem;
+        font-size: 0.5rem;
+    }
+
+    .brand img {
+        width: 43px;
+        height: 43px;
     }
 
     .nav-register {
-        padding: 10px 16px;
+        padding: 10px 15px;
+
+        font-size: 0.68rem;
     }
 
     .main-nav {
         order: 3;
 
-        width: 100%;
-
         flex: 0 0 100%;
 
         justify-content: flex-start;
 
-        gap: 2px;
-
         overflow-x: auto;
-
-        padding: 5px 0 2px;
 
         scrollbar-width: none;
     }
@@ -2009,26 +1737,24 @@ footer {
     .main-nav a {
         flex-shrink: 0;
 
-        padding: 8px 10px;
-
-        font-size: 0.7rem;
+        font-size: 0.66rem;
     }
 
 
     /* HERO */
 
     .hero-container {
-        width: calc(100% - 32px);
+        width: calc(100% - 28px);
 
         grid-template-columns: 1fr;
 
         text-align: center;
 
-        padding-top: 25px;
+        gap: 20px;
     }
 
     .hero-content {
-        padding: 50px 0 15px;
+        padding-top: 55px;
     }
 
     .hero-description {
@@ -2045,11 +1771,7 @@ footer {
     }
 
     .hero-visual {
-        height: 440px;
-
-        max-width: 600px;
-
-        margin: auto;
+        height: 430px;
     }
 
 
@@ -2060,14 +1782,10 @@ footer {
     }
 
     .feature-container {
-        width: calc(100% - 30px);
+        width: calc(100% - 24px);
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .quick-feature {
-        border-bottom: 1px solid #edf0f5;
+            repeat(2,1fr);
     }
 
     .quick-feature:nth-child(2) {
@@ -2075,49 +1793,39 @@ footer {
     }
 
 
-    /* SECTIONS */
+    /* COURSES */
 
-    .content-section {
-        width: calc(100% - 30px);
-
-        margin-top: 75px;
-        margin-bottom: 75px;
+    .course-grid {
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
 
     /* WHY */
 
-    .why-section {
-        padding: 75px 0;
-    }
-
     .why-container {
-        width: calc(100% - 30px);
+        width: calc(100% - 28px);
 
         grid-template-columns: 1fr;
 
-        gap: 45px;
-    }
-
-    .why-image {
-        width: min(550px, 100%);
-
-        margin: auto;
+        gap: 40px;
     }
 
     .why-content {
         text-align: center;
     }
 
-    .check-list {
-        text-align: left;
+    .why-image {
+        width: min(550px,100%);
+
+        margin: auto;
     }
 
 
     /* PROFESSOR */
 
     .professor-profile {
-        width: calc(100% - 30px);
+        width: calc(100% - 28px);
 
         grid-template-columns: 1fr;
 
@@ -2131,13 +1839,6 @@ footer {
 
     /* CTA */
 
-    .cta-section {
-        width: calc(100% - 30px);
-
-        margin-top: 75px;
-        margin-bottom: 75px;
-    }
-
     .cta-content {
         flex-direction: column;
 
@@ -2146,84 +1847,54 @@ footer {
 
     .cta-button {
         width: 100%;
+
+        text-align: center;
     }
 
 
     /* FOOTER */
 
     .footer-container {
-        width: calc(100% - 30px);
-
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2,1fr);
     }
 
     .footer-brand {
         grid-column: 1 / -1;
     }
 
-    .footer-bottom {
-        width: calc(100% - 30px);
-    }
 }
 
 
 /* =========================================================
    MOBILE
-   0px - 600px
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    body {
-        font-size: 15px;
-    }
-
-
-    /* HEADER */
-
     .navbar {
-        width: calc(100% - 22px);
+        width: calc(100% - 18px);
     }
 
     .brand-text strong {
-        max-width: 185px;
+        max-width: 170px;
 
         overflow: hidden;
 
         text-overflow: ellipsis;
     }
 
-    .nav-register {
-        padding: 9px 13px;
-
-        font-size: 0.7rem;
-    }
-
-
-    /* HERO */
-
-    .hero-container {
-        width: calc(100% - 24px);
-    }
-
-    .hero-content {
-        padding-top: 42px;
-    }
-
     .hero h1 {
-        font-size: clamp(2.05rem, 10vw, 2.8rem);
+        font-size: 2.25rem;
 
         letter-spacing: -1px;
     }
 
     .hero-description {
-        font-size: 0.82rem;
+        font-size: 0.77rem;
     }
 
     .hero-buttons {
-        width: 100%;
-
         flex-direction: column;
     }
 
@@ -2236,11 +1907,9 @@ footer {
         display: grid;
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2,1fr);
 
         gap: 18px;
-
-        margin-top: 30px;
     }
 
     .hero-visual {
@@ -2248,106 +1917,55 @@ footer {
     }
 
     .hero-circle {
-        width: 285px;
+        width: 280px;
     }
 
     .hero-circle-small {
-        width: 225px;
+        width: 215px;
     }
 
     .professor-ring {
-        width: 200px;
-        height: 260px;
-    }
-
-    .floating-card {
-        display: none;
+        width: 195px;
+        height: 255px;
     }
 
     .physics-symbol {
-        width: 48px;
-
-        font-size: 0.55rem;
-    }
-
-    .symbol-one {
-        top: 35px;
-        right: 10px;
-    }
-
-    .symbol-two {
-        bottom: 35px;
-        right: 5px;
-    }
-
-    .symbol-three {
-        top: 100px;
-        left: 0;
+        display: none;
     }
 
 
     /* FEATURES */
 
     .feature-container {
-        width: calc(100% - 22px);
-
-        border-radius: 13px;
+        grid-template-columns: 1fr;
     }
 
     .quick-feature {
-        padding: 16px 11px;
+        border-right: 0;
 
-        gap: 8px;
+        border-bottom: 1px solid #eceef3;
     }
 
-    .feature-icon {
-        width: 37px;
-        height: 37px;
-
-        font-size: 1rem;
-    }
-
-    .quick-feature strong {
-        font-size: 0.64rem;
-    }
-
-    .quick-feature span {
-        font-size: 0.52rem;
+    .quick-feature:last-child {
+        border-bottom: 0;
     }
 
 
-    /* SECTIONS */
+    /* CONTENT */
 
     .content-section {
         width: calc(100% - 24px);
 
-        margin-top: 65px;
-        margin-bottom: 65px;
-    }
-
-    .section-heading {
-        margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-        font-size: 1.8rem;
-    }
-
-    .section-heading p {
-        font-size: 0.76rem;
+        margin:
+            65px
+            auto;
     }
 
 
-    /* COURSE */
+    /* COURSES */
 
     .course-grid {
         grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .course-card {
-        padding: 23px 20px;
     }
 
     .course-card p {
@@ -2359,64 +1977,48 @@ footer {
 
     .explore-grid {
         grid-template-columns: 1fr;
-
-        gap: 18px;
     }
 
     .explore-card:last-child {
         grid-column: auto;
 
-        max-width: none;
+        width: 100%;
     }
 
     .explore-card > img {
-        height: 200px;
+        height: 230px;
     }
 
 
-    /* WHY */
+    /* ACHIEVEMENTS */
 
     .why-section {
         padding: 65px 0;
     }
 
-    .why-container {
-        width: calc(100% - 24px);
-    }
-
     .why-image {
-        padding: 12px;
+        padding: 10px;
     }
 
     .why-image img {
-        height: 330px;
-
-        border-radius: 20px;
-    }
-
-    .why-content h2 {
-        font-size: 1.8rem;
+        height: 320px;
     }
 
     .check-list {
         grid-template-columns: 1fr;
 
-        gap: 11px;
+        text-align: left;
     }
 
 
     /* PROFESSOR */
 
     .professor-profile {
-        width: calc(100% - 24px);
-
-        padding: 25px 17px;
-
-        border-radius: 20px;
+        padding: 27px 17px;
     }
 
     .professor-photo img {
-        width: 215px;
+        width: 210px;
         height: 275px;
     }
 
@@ -2428,8 +2030,6 @@ footer {
         flex-direction: column;
 
         align-items: center;
-
-        gap: 13px;
     }
 
 
@@ -2438,95 +2038,27 @@ footer {
     .cta-section {
         width: calc(100% - 24px);
 
+        margin:
+            65px
+            auto;
+
         padding: 32px 22px;
-
-        border-radius: 20px;
-    }
-
-    .cta-content h2 {
-        font-size: 1.65rem;
-    }
-
-
-    /* REGISTRATION */
-
-    .registration-page {
-        min-height: calc(100vh - 70px);
-
-        padding:
-            35px
-            12px
-            55px;
-    }
-
-    .registration-form {
-        width: 100%;
-
-        padding: 32px 18px;
-
-        border-radius: 19px;
-    }
-
-    .registration-form h2 {
-        font-size: 1.55rem;
-    }
-
-    .registration-form > p {
-        font-size: 0.75rem;
-    }
-
-    .registration-form input,
-    .registration-form select {
-        min-height: 50px;
-    }
-
-    .registration-form textarea {
-        min-height: 100px;
-    }
-
-
-    /* SUCCESS */
-
-    .success-page {
-        min-height: calc(100vh - 70px);
-
-        padding:
-            45px
-            12px;
-    }
-
-    .success-card {
-        padding: 40px 18px;
-
-        border-radius: 20px;
-    }
-
-    .success-icon {
-        width: 68px;
-        height: 68px;
-
-        font-size: 1.8rem;
-    }
-
-    .success-card h1 {
-        font-size: 1.55rem;
     }
 
 
     /* FOOTER */
 
     footer {
-        padding-top: 40px;
+        padding:
+            40px
+            15px
+            20px;
     }
 
     .footer-container {
-        width: calc(100% - 24px);
-
         grid-template-columns: 1fr;
 
         gap: 28px;
-
-        padding-bottom: 35px;
     }
 
     .footer-brand {
@@ -2534,53 +2066,69 @@ footer {
     }
 
     .footer-bottom {
-        width: calc(100% - 24px);
-
         flex-direction: column;
 
         text-align: center;
-
-        padding: 18px 0;
     }
+
+
+    /* REGISTER */
+
+    .registration-page {
+        padding:
+            45px
+            12px
+            60px;
+    }
+
+    .registration-form {
+        padding: 30px 17px;
+
+        border-radius: 19px;
+    }
+
+
+    /* SUCCESS */
+
+    .success-page {
+        padding:
+            50px
+            12px;
+    }
+
+    .success-card {
+        padding:
+            42px
+            18px;
+    }
+
+    .success-card h1 {
+        font-size: 1.55rem;
+    }
+
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   320px - 380px
+   SMALL PHONES
 ========================================================= */
 
 @media (max-width: 380px) {
 
-    .brand img {
-        width: 40px;
-        height: 40px;
-    }
-
     .brand-text strong {
-        max-width: 145px;
+        max-width: 140px;
 
-        font-size: 0.68rem;
-    }
-
-    .brand-text span {
-        font-size: 0.47rem;
+        font-size: 0.64rem;
     }
 
     .nav-register {
-        padding: 8px 10px;
+        padding: 9px 11px;
 
-        font-size: 0.64rem;
-    }
-
-    .main-nav a {
-        padding: 7px 8px;
-
-        font-size: 0.64rem;
+        font-size: 0.62rem;
     }
 
     .hero h1 {
-        font-size: 1.95rem;
+        font-size: 2rem;
     }
 
     .hero-visual {
@@ -2588,66 +2136,46 @@ footer {
     }
 
     .hero-circle {
-        width: 250px;
+        width: 245px;
     }
 
     .hero-circle-small {
-        width: 195px;
+        width: 190px;
     }
 
     .professor-ring {
         width: 175px;
         height: 230px;
     }
-
-    .physics-symbol {
-        display: none;
-    }
-
-    .feature-container {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-feature {
-        border-right: 0;
-
-        border-bottom: 1px solid #edf0f5;
-    }
-
-    .quick-feature:last-child {
-        border-bottom: 0;
-    }
-
-    .registration-form {
-        padding: 28px 15px;
-    }
 }
 
 
 /* =========================================================
-   LANDSCAPE MOBILE
+   4K
 ========================================================= */
 
-@media (max-width: 900px) and (orientation: landscape) {
+@media (min-width: 2000px) {
+
+    .navbar,
+    .hero-container,
+    .content-section,
+    .why-container,
+    .footer-container,
+    .footer-bottom {
+        width: min(1450px, calc(100% - 100px));
+    }
+
+    .feature-container,
+    .cta-section {
+        width: min(1350px, calc(100% - 100px));
+    }
 
     .hero-container {
-        min-height: auto;
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(260px, 0.8fr);
-    }
-
-    .hero-content {
-        padding: 40px 0;
-    }
-
-    .hero-visual {
-        height: 400px;
+        min-height: 700px;
     }
 
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: 5rem;
     }
 }
 
@@ -2658,83 +2186,13 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
 
-    html {
-        scroll-behavior: auto;
-    }
-
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
     }
-}
-
-
-/* =========================================================
-   TOUCH DEVICES
-========================================================= */
-
-@media (hover: none) {
-
-    .course-card:hover,
-    .explore-card:hover,
-    .primary-btn:hover,
-    .secondary-btn:hover,
-    .nav-register:hover,
-    .cta-button:hover {
-        transform: none;
-    }
-}
-
-
-/* =========================================================
-   SAFE IMAGE HANDLING
-========================================================= */
-
-img {
-    max-width: 100%;
-}
-
-.hero img,
-.professor-photo img,
-.why-image img,
-.explore-card img {
-    max-width: 100%;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f0f1f5;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #7667df;
-
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #5b48da;
-}
-
-
-/* =========================================================
-   TEXT SELECTION
-========================================================= */
-
-::selection {
-    background: #5b48da;
-
-    color: white;
 }
