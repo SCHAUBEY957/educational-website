@@ -1,127 +1,1218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brilliant Physics Tutorial</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <meta name="description" content="Brilliant Physics Tutorial - Quality Education for JEE, NEET, and Board Exams in Motihari.">
-    <meta name="keywords" content="Physics, Coaching, JEE, NEET, Kota, Bihar, Brilliant Physics Tutorial">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Brilliant Physics Tutorial - Quality Physics Education for JEE, NEET and Board Exams."
+    >
+
+    <title>
+        Brilliant Physics Tutorial | Motihari
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
 </head>
+
+
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="header-content">
-            <h1>BRILLIANT PHYSICS TUTORIAL</h1>
-            <h2>Motihari No. 1</h2>
-            <img src="/static/images/logo.png" alt="Logo" class="logo">
-        </div>
-        <p class="slogan">Path to Success</p>
-        <nav>
-            <ul>
-                <li><a href="#prospectus">Prospectus</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#professor">Meet Our Professor</a></li>
-                <li><a href="/register">Register</a></li>
-            </ul>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="navbar">
+
+
+        <a href="/" class="brand">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Brilliant Physics Tutorial Logo"
+            >
+
+            <div class="brand-text">
+
+                <strong>
+                    BRILLIANT PHYSICS TUTORIAL
+                </strong>
+
+                <span>
+                    PATH TO SUCCESS
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#prospectus">
+                Prospectus
+            </a>
+
+            <a href="#achievements">
+                Achievements
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#professor">
+                Professor
+            </a>
+
         </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
 
-        <!-- Meet Our Professor -->
-        <section id="professor">
-            <h2>Meet Our Professor</h2>
-            <div class="professor-info">
-                <img src="/static/images/ps.jpg" alt="Professor" class="professor-image">
-                <div class="professor-details">
-                    <h3>Pr. Rahul Kumar Chaubey</h3>
-                    <h4>Experience:</h4>
-                    <p>2+ years of teaching experience in Kota (Rajasthan)</p>
-                    <h4>Address:</h4>
-                    <p>Brilliant Physics Tutorial<br>Chandmari, Motihari<br>Bihar 845401</p>
+        <a
+            href="/register"
+            class="nav-register"
+        >
+            Register
+        </a>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                Physics Education • Motihari
+            </div>
+
+
+            <h1>
+
+                Master Physics.
+                <br>
+
+                <span>
+                    Build Your Future.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Quality Physics education with focused
+                teaching, structured study material,
+                regular tests and doubt-clearing support
+                for students preparing for JEE, NEET
+                and Board examinations.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="/register"
+                    class="primary-btn"
+                >
+                    Start Your Journey →
+                </a>
+
+
+                <a
+                    href="#courses"
+                    class="secondary-btn"
+                >
+                    Explore Courses
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>2+</strong>
+                    <span>Years Experience</span>
                 </div>
-            </div>
-        </section>
 
-        <!-- Centered Image Row -->
-        <section class="image-row">
-            <div class="image-item">
-                <img src="/static/images/po.jpg" alt="Prospectus">
-                <h3>Prospectus</h3>
-            </div>
-            <div class="image-item">
-                <img src="/static/images/ac.jpg" alt="Achievements">
-                <h3>Achievements</h3>
-            </div>
-            <div class="image-item">
-                <img src="/static/images/ps.jpg" alt="Events">
-                <h3>Events</h3>
-            </div>
-        </section>
-
-        <!-- Announcements -->
-        <section class="announcements">
-            <h2>📢 Announcements</h2>
-            <div class="item">
-                <h3>Exam Date Notification</h3>
-                <p class="date">Date: February 1, 2025</p>
-                <p>Mid-term physics exams will be held from March 15-20. Check the timetable for details.</p>
-                <a href="#" class="btn">View Details</a>
-            </div>
-            <div class="item">
-                <h3>New Physics Notes Available</h3>
-                <p class="date">Date: January 28, 2025</p>
-                <p>Updated notes on Quantum Mechanics and Electromagnetism are now available in the student portal.</p>
-                <a href="#" class="btn">Download Notes</a>
-            </div>
-        </section>
-
-        <!-- News & Events -->
-        <section class="news-events">
-            <h2>📰 News & Events</h2>
-            <div id="news-content">
-                <div class="news-item">
-                    <h3>New Physics Workshop Announced</h3>
-                    <p class="date">Date: February 10, 2025</p>
-                    <p>Join our expert-led physics workshop covering mechanics and thermodynamics. Registration is open now!</p>
-                    <a href="#" class="btn">Read More</a>
+                <div>
+                    <strong>JEE</strong>
+                    <span>Preparation</span>
                 </div>
-                <div class="news-item">
-                    <h3>New Course Material Available</h3>
-                    <p class="date">Date: January 25, 2025</p>
-                    <p>We have updated our course material with new study resources. Check them out now!</p>
-                    <a href="#" class="btn">View Material</a>
+
+                <div>
+                    <strong>NEET</strong>
+                    <span>Preparation</span>
                 </div>
+
+                <div>
+                    <strong>11–12</strong>
+                    <span>Classes</span>
+                </div>
+
             </div>
-        </section>
 
-        <!-- Advantages -->
-        <section class="advantages">
-            <h2>Advantages</h2>
-            <ul id="advantages-list">
-                <li>✔ Special teaching expertise from Kota (Rajasthan)</li>
-                <li>✔ High-quality study materials and notes</li>
-                <li>✔ Regular test series and performance analysis</li>
-                <li>✔ Interactive doubt-clearing sessions</li>
-                <li>✔ Smart classroom facilities</li>
-                <li>✔ Effective preparation for JEE, NEET, and Board exams</li>
-                <li>✔ Topic-wise assignments and practice questions</li>
-                <li>✔ 100% dedicated path to success</li>
-            </ul>
-        </section>
+        </div>
 
-        <p>Explore our academic programs and learning opportunities.</p>
 
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Brilliant Physics Tutorial. All Rights Reserved.</p>
-    </footer>
+        <!-- HERO IMAGE -->
+
+        <div class="hero-visual">
+
+            <div class="hero-circle"></div>
+
+            <div class="hero-circle-small"></div>
+
+
+            <div class="physics-symbol symbol-one">
+                F = ma
+            </div>
+
+            <div class="physics-symbol symbol-two">
+                E = mc²
+            </div>
+
+            <div class="physics-symbol symbol-three">
+                V = IR
+            </div>
+
+
+            <div class="professor-card">
+
+                <div class="professor-ring">
+
+                    <img
+                        src="{{ url_for('static', filename='images/ps.jpg') }}"
+                        alt="Physics Professor"
+                    >
+
+                </div>
+
+
+                <div class="professor-label">
+
+                    <span>
+                        Physics Faculty
+                    </span>
+
+                    <strong>
+                        Pr. Rahul Kumar Chaubey
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card card-top">
+
+                <div class="floating-icon">
+                    📚
+                </div>
+
+                <div>
+                    <strong>
+                        Smart Learning
+                    </strong>
+
+                    <small>
+                        Concept Based
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="floating-card card-bottom">
+
+                <div class="floating-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <strong>
+                        Exam Focused
+                    </strong>
+
+                    <small>
+                        JEE • NEET • Boards
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK FEATURES
+===================================================== -->
+
+<section class="quick-features">
+
+    <div class="feature-container">
+
+
+        <div class="quick-feature">
+
+            <div class="feature-icon">
+                🎥
+            </div>
+
+            <div>
+
+                <strong>
+                    Concept Classes
+                </strong>
+
+                <span>
+                    Clear fundamentals
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-feature">
+
+            <div class="feature-icon">
+                📝
+            </div>
+
+            <div>
+
+                <strong>
+                    Study Material
+                </strong>
+
+                <span>
+                    Notes & assignments
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-feature">
+
+            <div class="feature-icon">
+                💡
+            </div>
+
+            <div>
+
+                <strong>
+                    Doubt Support
+                </strong>
+
+                <span>
+                    Regular guidance
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-feature">
+
+            <div class="feature-icon">
+                🏆
+            </div>
+
+            <div>
+
+                <strong>
+                    Test Series
+                </strong>
+
+                <span>
+                    Track performance
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COURSES
+===================================================== -->
+
+<section
+    class="content-section"
+    id="courses"
+>
+
+    <div class="section-heading">
+
+        <span>
+            OUR PROGRAMS
+        </span>
+
+        <h2>
+            Learn Physics With
+            <em>Clarity</em>
+        </h2>
+
+        <p>
+            Structured programs designed for different
+            academic and competitive examination needs.
+        </p>
+
+    </div>
+
+
+    <div class="course-grid">
+
+
+        <div class="course-card">
+
+            <span class="course-number">
+                01
+            </span>
+
+            <div class="course-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Class 11th Physics
+            </h3>
+
+            <p>
+                Build strong fundamentals in mechanics,
+                thermodynamics, waves and other core
+                Physics concepts.
+            </p>
+
+            <a href="/register">
+                Enquire Now →
+            </a>
+
+        </div>
+
+
+        <div class="course-card featured">
+
+            <span class="course-number">
+                02
+            </span>
+
+            <div class="course-icon">
+                🚀
+            </div>
+
+            <h3>
+                Class 12th Physics
+            </h3>
+
+            <p>
+                Complete Class 12 Physics preparation
+                with concepts, numerical practice,
+                revision and examination support.
+            </p>
+
+            <a href="/register">
+                Enquire Now →
+            </a>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <span class="course-number">
+                03
+            </span>
+
+            <div class="course-icon">
+                🎯
+            </div>
+
+            <h3>
+                JEE Physics
+            </h3>
+
+            <p>
+                Problem-solving focused preparation
+                for competitive Physics with regular
+                practice and tests.
+            </p>
+
+            <a href="/register">
+                Enquire Now →
+            </a>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <span class="course-number">
+                04
+            </span>
+
+            <div class="course-icon">
+                🔬
+            </div>
+
+            <h3>
+                NEET Physics
+            </h3>
+
+            <p>
+                Strengthen Physics concepts and numerical
+                solving skills for medical entrance
+                preparation.
+            </p>
+
+            <a href="/register">
+                Enquire Now →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROSPECTUS
+===================================================== -->
+
+<section
+    class="content-section"
+    id="prospectus"
+>
+
+    <div class="section-heading">
+
+        <span>
+            PROSPECTUS
+        </span>
+
+        <h2>
+            Your Path To
+            <em>Success</em>
+        </h2>
+
+        <p>
+            Focused Physics education with concepts,
+            practice and continuous improvement.
+        </p>
+
+    </div>
+
+
+    <div class="explore-grid">
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/po.jpg') }}"
+                alt="Prospectus"
+            >
+
+            <div>
+
+                <span>
+                    PROGRAM
+                </span>
+
+                <h3>
+                    Physics Learning
+                </h3>
+
+                <p>
+                    A structured learning environment
+                    focused on understanding Physics.
+                </p>
+
+                <a href="/register">
+                    Get Details →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/ac.jpg') }}"
+                alt="Achievements"
+            >
+
+            <div>
+
+                <span>
+                    PERFORMANCE
+                </span>
+
+                <h3>
+                    Student Growth
+                </h3>
+
+                <p>
+                    Regular tests and practice help
+                    students understand their progress.
+                </p>
+
+                <a href="#achievements">
+                    View Achievements →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/ps.jpg') }}"
+                alt="Physics Faculty"
+            >
+
+            <div>
+
+                <span>
+                    FACULTY
+                </span>
+
+                <h3>
+                    Expert Guidance
+                </h3>
+
+                <p>
+                    Learn Physics with focused guidance
+                    and doubt-solving support.
+                </p>
+
+                <a href="#professor">
+                    Meet Professor →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="why-section">
+
+    <div class="why-container">
+
+
+        <div class="why-image">
+
+            <div class="image-back"></div>
+
+            <img
+                src="{{ url_for('static', filename='images/po.jpg') }}"
+                alt="Brilliant Physics Tutorial"
+            >
+
+        </div>
+
+
+        <div class="why-content">
+
+            <span class="section-label">
+                WHY CHOOSE US
+            </span>
+
+            <h2>
+                Physics Should Be
+                <span>
+                    Understood,
+                </span>
+                Not Memorised.
+            </h2>
+
+            <p>
+                Our approach focuses on building concepts
+                first and then developing problem-solving
+                ability through practice.
+            </p>
+
+
+            <div class="check-list">
+
+                <div>
+                    <span>✓</span>
+                    Kota teaching experience
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Quality study material
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Regular test series
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Doubt clearing
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Topic-wise practice
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Exam-focused preparation
+                </div>
+
+            </div>
+
+
+            <a
+                href="/register"
+                class="primary-btn"
+            >
+                Enquire Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section
+    class="content-section"
+    id="achievements"
+>
+
+    <div class="section-heading">
+
+        <span>
+            ACHIEVEMENTS
+        </span>
+
+        <h2>
+            Progress Through
+            <em>Practice</em>
+        </h2>
+
+        <p>
+            Consistent learning, testing and revision
+            create better academic outcomes.
+        </p>
+
+    </div>
+
+
+    <div class="course-grid">
+
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                📈
+            </div>
+
+            <h3>
+                Regular Assessment
+            </h3>
+
+            <p>
+                Students can track their understanding
+                through regular Physics tests.
+            </p>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                🧠
+            </div>
+
+            <h3>
+                Concept Building
+            </h3>
+
+            <p>
+                Strong fundamentals help students
+                approach difficult problems confidently.
+            </p>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                🏅
+            </div>
+
+            <h3>
+                Competitive Focus
+            </h3>
+
+            <p>
+                Preparation is structured around
+                competitive examination requirements.
+            </p>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                📚
+            </div>
+
+            <h3>
+                Continuous Revision
+            </h3>
+
+            <p>
+                Revision and practice help reinforce
+                important Physics concepts.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section
+    class="content-section"
+    id="events"
+>
+
+    <div class="section-heading">
+
+        <span>
+            EVENTS & ACTIVITIES
+        </span>
+
+        <h2>
+            Learning Beyond
+            <em>The Classroom</em>
+        </h2>
+
+        <p>
+            Academic activities designed to keep students
+            engaged and focused.
+        </p>
+
+    </div>
+
+
+    <div class="explore-grid">
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/ac.jpg') }}"
+                alt="Physics Test"
+            >
+
+            <div>
+
+                <span>
+                    TEST
+                </span>
+
+                <h3>
+                    Physics Test Series
+                </h3>
+
+                <p>
+                    Regular tests for practice,
+                    revision and performance analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/po.jpg') }}"
+                alt="Physics Workshop"
+            >
+
+            <div>
+
+                <span>
+                    WORKSHOP
+                </span>
+
+                <h3>
+                    Physics Sessions
+                </h3>
+
+                <p>
+                    Focused sessions for understanding
+                    challenging Physics topics.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="explore-card">
+
+            <img
+                src="{{ url_for('static', filename='images/ps.jpg') }}"
+                alt="Faculty Session"
+            >
+
+            <div>
+
+                <span>
+                    GUIDANCE
+                </span>
+
+                <h3>
+                    Doubt Sessions
+                </h3>
+
+                <p>
+                    Interactive sessions to clarify
+                    difficult questions and concepts.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFESSOR
+===================================================== -->
+
+<section
+    class="content-section"
+    id="professor"
+>
+
+    <div class="section-heading">
+
+        <span>
+            OUR FACULTY
+        </span>
+
+        <h2>
+            Meet Our
+            <em>Professor</em>
+        </h2>
+
+    </div>
+
+
+    <div class="professor-profile">
+
+
+        <div class="professor-photo">
+
+            <img
+                src="{{ url_for('static', filename='images/ps.jpg') }}"
+                alt="Pr. Rahul Kumar Chaubey"
+            >
+
+        </div>
+
+
+        <div class="professor-info">
+
+            <span class="faculty-tag">
+                PHYSICS FACULTY
+            </span>
+
+            <h3>
+                Pr. Rahul Kumar Chaubey
+            </h3>
+
+            <p class="experience">
+                2+ Years Teaching Experience in Kota
+            </p>
+
+            <p>
+                Focused on conceptual Physics teaching,
+                problem solving and examination-oriented
+                preparation for students.
+            </p>
+
+
+            <div class="faculty-details">
+
+                <div>
+
+                    <strong>
+                        Experience
+                    </strong>
+
+                    <span>
+                        2+ Years
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Location
+                    </strong>
+
+                    <span>
+                        Chandmari, Motihari
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Focus
+                    </strong>
+
+                    <span>
+                        JEE • NEET • Boards
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <div>
+
+            <span>
+                READY TO START?
+            </span>
+
+            <h2>
+                Begin Your Physics Journey.
+            </h2>
+
+            <p>
+                Register your enquiry and connect
+                with Brilliant Physics Tutorial.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/register"
+            class="cta-button"
+        >
+            Register Now →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Brilliant Physics Tutorial"
+            >
+
+            <div>
+
+                <strong>
+                    BRILLIANT PHYSICS TUTORIAL
+                </strong>
+
+                <p>
+                    Path to Success
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#prospectus">
+                Prospectus
+            </a>
+
+            <a href="#achievements">
+                Achievements
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+        </div>
+
+
+        <div class="footer-address">
+
+            <strong>
+                Visit Us
+            </strong>
+
+            <p>
+                Brilliant Physics Tutorial<br>
+                Chandmari, Motihari<br>
+                Bihar - 845401
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2025 Brilliant Physics Tutorial.
+            All Rights Reserved.
+        </span>
+
+        <span>
+            Path to Success
+        </span>
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>

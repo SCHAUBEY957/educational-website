@@ -1,304 +1,2740 @@
-/* styles.css */
+/* =========================================================
+   BRILLIANT PHYSICS TUTORIAL
+   RESPONSIVE / ALL DEVICES CSS
+   Mobile • Tablet • Laptop • Desktop • 4K
+========================================================= */
 
-/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    background-color: #f5f6fa;
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+
+    color: #171b2d;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(91, 72, 218, 0.06),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(20, 160, 240, 0.05),
+            transparent 30%
+        ),
+        #ffffff;
+
     line-height: 1.6;
-    color: #2d3436;
+
+    overflow-x: hidden;
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(135deg, #2c3e50, #3498db);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.logo {
-    width: 80px;
-    position: absolute;
-    top: 0;
-    left: 1rem;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-.slogan {
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: #dfe6e9;
+button {
+    cursor: pointer;
 }
 
-/* Navigation */
-nav {
-    background: #2c3e50;
-    padding: 1rem;
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.navbar,
+.hero-container,
+.feature-container,
+.content-section,
+.why-container,
+.professor-profile,
+.cta-section,
+.footer-container,
+.footer-bottom {
+    width: min(1200px, calc(100% - 40px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid #eceef4;
+
+    box-shadow:
+        0 4px 25px rgba(20, 25, 50, 0.05);
 }
 
-nav ul {
+.navbar {
+    min-height: 76px;
+
     display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    min-width: 230px;
+}
+
+.brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+}
+
+.brand-text strong {
+    font-family: "Poppins", sans-serif;
+
+    color: #171b28;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.brand-text span {
+    color: #5b48da;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
-    list-style: none;
-    gap: 2rem;
-    flex-wrap: wrap;
+
+    gap: 2px;
+
+    min-width: 0;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+.main-nav a {
+    padding: 10px 11px;
+
+    border-radius: 8px;
+
+    color: #202432;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
-nav a:hover {
-    background: #3498db;
+.main-nav a:hover {
+    color: #5b48da;
+    background: #f2efff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NAV REGISTER
+========================================================= */
+
+.nav-register {
+    flex-shrink: 0;
+
+    padding: 12px 24px;
+
+    border-radius: 9px;
+
+    background: #171c21;
+
+    color: #ffffff !important;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.nav-register:hover {
+    background: #5b48da;
+
     transform: translateY(-2px);
 }
 
-/* Main Content */
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
 
-section {
-    margin: 3rem 0;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-}
+/* =========================================================
+   HERO
+========================================================= */
 
-h2 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 0.5rem;
-}
-
-/* Professor Section */
-.professor-info {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.professor-image {
+.hero {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #f4f5ff 0%,
+            #fbf9ff 50%,
+            #f3f1ff 100%
+        );
 }
 
-.professor-details h3 {
-    color: #3498db;
-    margin-bottom: 1rem;
+.hero-container {
+    min-height: 580px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+
+    align-items: center;
+
+    gap: clamp(30px, 5vw, 80px);
 }
 
-/* Centered Image Row (Prospectus, Achievements, Events) */
-.image-gallery {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+.hero-content {
+    min-width: 0;
+
+    padding: 70px 0;
 }
 
-.image-row {
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: #e9e5ff;
+
+    color: #5b48da;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #191d29;
+
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: #5b48da;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    color: #626a7a;
+
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+
     flex-wrap: wrap;
-    margin-top: 20px;
+
+    gap: 12px;
 }
 
-.image-item {
-    text-align: center;
+.primary-btn,
+.secondary-btn,
+.cta-button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 23px;
+
+    border-radius: 9px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition: 0.3s ease;
 }
 
-.image-item img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    border: 3px solid #3498db;
-    transition: transform 0.3s ease;
+.primary-btn {
+    background: #5b48da;
+
+    color: white !important;
+
+    box-shadow:
+        0 12px 25px rgba(91, 72, 218, 0.22);
 }
 
-.image-item img:hover {
-    transform: scale(1.05);
+.primary-btn:hover {
+    background: #4936c6;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 32px rgba(91, 72, 218, 0.28);
 }
 
-.image-item h3 {
-    margin-top: 0.5rem;
-    color: #2c3e50;
-    font-weight: bold;
-}
-
-/* Announcements & News */
-.announcements, .news-events {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.item, .news-item {
+.secondary-btn {
     background: white;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    border-left: 4px solid #3498db;
-    border-radius: 4px;
+
+    border: 1px solid #d8d3f5;
+
+    color: #5b48da;
 }
 
-.date {
-    color: #7f8c8d;
-    font-size: 0.9rem;
+.secondary-btn:hover {
+    border-color: #5b48da;
+
+    transform: translateY(-3px);
 }
 
-.btn {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: background 0.3s ease;
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-top: 35px;
 }
 
-.btn:hover {
-    background: #2980b9;
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Advantages List */
-#advantages-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+.hero-stats strong {
+    color: #202436;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.05rem;
 }
 
-#advantages-list li {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 4px;
-    position: relative;
-    padding-left: 2rem;
-}
+.hero-stats span {
+    color: #858c9a;
 
-#advantages-list li::before {
-    content: '✔';
-    color: #27ae60;
-    position: absolute;
-    left: 0.5rem;
-}
-
-/* Registration Form Styles */
-.registration-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-}
-
-form {
-    display: grid;
-    gap: 1rem;
-}
-
-label {
+    font-size: 0.63rem;
     font-weight: 600;
-    color: #2c3e50;
 }
 
-input, select {
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
     width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #dfe6e9;
-    border-radius: 4px;
-    margin-top: 0.5rem;
+    min-width: 0;
+
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button[type="submit"] {
-    background: #27ae60;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
+.hero-circle {
+    position: absolute;
+
+    width: min(390px, 70%);
+    aspect-ratio: 1;
+
+    border: 2px dashed #c9c3f5;
+
+    border-radius: 50%;
+
+    animation: rotate 25s linear infinite;
 }
 
-button[type="submit"]:hover {
-    background: #219a52;
+.hero-circle-small {
+    position: absolute;
+
+    width: min(300px, 55%);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: #e8e4ff;
+
+    box-shadow:
+        0 30px 70px rgba(70, 55, 160, 0.14);
 }
 
-/* Footer */
-footer {
-    background: #2c3e50;
-    color: white;
+.professor-card {
+    position: relative;
+
+    z-index: 5;
+
     text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
 }
 
-/* Responsive Design */
+.professor-ring {
+    width: clamp(190px, 23vw, 270px);
+    height: clamp(240px, 28vw, 325px);
+
+    overflow: hidden;
+
+    border: 7px solid white;
+
+    border-radius: 150px 150px 25px 25px;
+
+    box-shadow:
+        0 25px 55px rgba(40, 35, 100, 0.18);
+}
+
+.professor-ring img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+.professor-label {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 9px 15px;
+
+    margin-top: -5px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 25px rgba(20, 20, 60, 0.1);
+}
+
+.professor-label span {
+    color: #5b48da;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+}
+
+.professor-label strong {
+    color: #25293a;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 14px;
+
+    border-radius: 11px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 35px rgba(40, 35, 90, 0.12);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.card-top {
+    top: 55px;
+    left: 0;
+}
+
+.card-bottom {
+    bottom: 55px;
+    left: 5px;
+
+    animation-delay: 1s;
+}
+
+.floating-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #eeeaff;
+}
+
+.floating-card div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-card strong {
+    color: #292d3d;
+
+    font-size: 0.68rem;
+}
+
+.floating-card small {
+    color: #858c99;
+
+    font-size: 0.57rem;
+}
+
+
+/* =========================================================
+   PHYSICS SYMBOLS
+========================================================= */
+
+.physics-symbol {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 55px;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #5b48da;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px rgba(50, 40, 100, 0.12);
+}
+
+.symbol-one {
+    top: 45px;
+    right: 20px;
+}
+
+.symbol-two {
+    bottom: 50px;
+    right: 5px;
+}
+
+.symbol-three {
+    top: 125px;
+    left: 5px;
+}
+
+
+/* =========================================================
+   QUICK FEATURES
+========================================================= */
+
+.quick-features {
+    position: relative;
+
+    z-index: 30;
+
+    margin-top: -35px;
+
+    padding-bottom: 20px;
+}
+
+.feature-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 45px rgba(30, 35, 80, 0.1);
+}
+
+.quick-feature {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 21px 17px;
+
+    border-right: 1px solid #edf0f5;
+}
+
+.quick-feature:last-child {
+    border-right: 0;
+}
+
+.feature-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #f0edff;
+
+    font-size: 1.15rem;
+}
+
+.quick-feature div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-feature strong {
+    color: #252a3a;
+
+    font-size: 0.72rem;
+
+    white-space: nowrap;
+}
+
+.quick-feature span {
+    color: #8a91a0;
+
+    font-size: 0.59rem;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.content-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    scroll-margin-top: 100px;
+}
+
+.section-heading {
+    max-width: 720px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-heading > span,
+.section-label {
+    color: #5b48da;
+
+    font-size: 0.67rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 9px 0 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #202434;
+
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    line-height: 1.2;
+}
+
+.section-heading h2 em {
+    color: #5b48da;
+
+    font-style: normal;
+}
+
+.section-heading p {
+    color: #747b8c;
+
+    font-size: 0.84rem;
+}
+
+
+/* =========================================================
+   COURSE GRID
+========================================================= */
+
+.course-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.course-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 27px 22px;
+
+    overflow: hidden;
+
+    border: 1px solid #e8eaf1;
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px rgba(25, 30, 70, 0.05);
+
+    transition: 0.35s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(50, 45, 120, 0.12);
+}
+
+.course-card.featured {
+    border: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #5140cf,
+            #7563e8
+        );
+}
+
+.course-number {
+    position: absolute;
+
+    top: 5px;
+    right: 13px;
+
+    color: rgba(91, 72, 218, 0.08);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.featured .course-number {
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.course-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 13px;
+
+    background: #f0edff;
+
+    font-size: 1.3rem;
+}
+
+.featured .course-icon {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.course-card h3 {
+    margin-bottom: 9px;
+
+    color: #24283a;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1rem;
+}
+
+.featured h3 {
+    color: white;
+}
+
+.course-card p {
+    min-height: 82px;
+
+    color: #7b8291;
+
+    font-size: 0.74rem;
+
+    line-height: 1.65;
+}
+
+.featured p {
+    color: #e8e5ff;
+}
+
+.course-card a {
+    display: inline-block;
+
+    margin-top: 13px;
+
+    color: #5b48da;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.featured a {
+    color: white;
+}
+
+
+/* =========================================================
+   EXPLORE CARDS
+========================================================= */
+
+.explore-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.explore-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #e8eaf1;
+
+    border-radius: 19px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px rgba(20, 25, 60, 0.06);
+
+    transition: 0.35s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(30, 25, 90, 0.12);
+}
+
+.explore-card > img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.explore-card > div {
+    padding: 22px;
+}
+
+.explore-card span {
+    color: #5b48da;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.explore-card h3 {
+    margin: 6px 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.1rem;
+}
+
+.explore-card p {
+    margin-bottom: 12px;
+
+    color: #7a8190;
+
+    font-size: 0.74rem;
+}
+
+.explore-card a {
+    color: #5b48da;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   WHY SECTION
+========================================================= */
+
+.why-section {
+    width: 100%;
+
+    padding: 100px 0;
+
+    background: #f7f6ff;
+}
+
+.why-container {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    align-items: center;
+
+    gap: clamp(40px, 7vw, 80px);
+}
+
+.why-image {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 20px;
+}
+
+.image-back {
+    position: absolute;
+
+    top: 8%;
+    left: 0;
+
+    width: 82%;
+    height: 85%;
+
+    border-radius: 25px;
+
+    background: #dcd7ff;
+
+    transform: rotate(-6deg);
+}
+
+.why-image img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 50px rgba(40, 35, 100, 0.15);
+}
+
+.why-content {
+    min-width: 0;
+}
+
+.why-content h2 {
+    margin: 10px 0 17px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+
+    line-height: 1.2;
+}
+
+.why-content h2 span {
+    color: #5b48da;
+}
+
+.why-content > p {
+    margin-bottom: 23px;
+
+    color: #697184;
+
+    font-size: 0.84rem;
+}
+
+.check-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+}
+
+.check-list div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #414858;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.check-list span {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e8e4ff;
+
+    color: #5b48da;
+}
+
+
+/* =========================================================
+   PROFESSOR
+========================================================= */
+
+.professor-profile {
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 0.7fr)
+        minmax(0, 1.3fr);
+
+    align-items: center;
+
+    gap: clamp(30px, 6vw, 65px);
+
+    padding: clamp(25px, 5vw, 40px);
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 50px rgba(25, 30, 70, 0.08);
+}
+
+.professor-photo {
+    min-width: 0;
+}
+
+.professor-photo img {
+    width: min(270px, 100%);
+    height: 330px;
+
+    margin: auto;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    border: 7px solid #f0edff;
+
+    border-radius: 150px 150px 25px 25px;
+}
+
+.faculty-tag {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #eeeaff;
+
+    color: #5b48da;
+
+    font-size: 0.59rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.professor-info {
+    min-width: 0;
+}
+
+.professor-info h3 {
+    margin: 12px 0 4px;
+
+    color: #202434;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+}
+
+.professor-info .experience {
+    margin-bottom: 14px;
+
+    color: #5b48da;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.professor-info > p:not(.experience) {
+    margin-bottom: 23px;
+
+    color: #6d7484;
+
+    font-size: 0.8rem;
+}
+
+.faculty-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+.faculty-details div {
+    display: flex;
+    flex-direction: column;
+}
+
+.faculty-details strong {
+    color: #272c3c;
+
+    font-size: 0.68rem;
+}
+
+.faculty-details span {
+    color: #7d8492;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    padding: clamp(35px, 6vw, 55px);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #5140cf,
+            #715de5
+        );
+
+    color: white;
+
+    box-shadow:
+        0 25px 55px rgba(80, 60, 190, 0.2);
+}
+
+.cta-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.cta-content > div {
+    min-width: 0;
+}
+
+.cta-content > div > span {
+    color: #dcd8ff;
+
+    font-size: 0.62rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.cta-content h2 {
+    margin: 7px 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+
+    line-height: 1.2;
+}
+
+.cta-content p {
+    color: #e5e2ff;
+
+    font-size: 0.78rem;
+}
+
+.cta-button {
+    flex-shrink: 0;
+
+    background: white;
+
+    color: #5140cf !important;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   REGISTRATION PAGE
+========================================================= */
+
+.registration-page {
+    width: 100%;
+
+    min-height: calc(100vh - 76px);
+
+    padding:
+        clamp(40px, 7vw, 80px)
+        20px
+        90px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(91, 72, 218, 0.1),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 55%,
+            rgba(14, 165, 233, 0.07),
+            transparent 30%
+        ),
+        #f8f9ff;
+}
+
+.registration-form {
+    position: relative;
+
+    width: min(720px, 100%);
+
+    padding: clamp(25px, 5vw, 45px);
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7ef;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 70px rgba(30, 35, 80, 0.12);
+}
+
+.registration-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5140cf,
+            #7867e8,
+            #5140cf
+        );
+}
+
+.registration-form h2 {
+    margin-bottom: 9px;
+
+    text-align: center;
+
+    color: #1d2232;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(1.6rem, 5vw, 2rem);
+
+    line-height: 1.2;
+}
+
+.registration-form > p {
+    max-width: 550px;
+
+    margin:
+        0 auto
+        30px;
+
+    text-align: center;
+
+    color: #747b8c;
+
+    font-size: 0.82rem;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form label {
+    margin: 16px 0 7px;
+
+    color: #303647;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.registration-form label:first-of-type {
+    margin-top: 0;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+
+    border: 1px solid #dfe2eb;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #f9fafc;
+
+    color: #202434;
+
+    font-size: 0.85rem;
+
+    transition: 0.25s ease;
+}
+
+.registration-form input,
+.registration-form select {
+    min-height: 52px;
+
+    padding:
+        0
+        15px;
+}
+
+.registration-form textarea {
+    min-height: 110px;
+
+    padding: 14px 15px;
+
+    resize: vertical;
+}
+
+.registration-form input:focus,
+.registration-form select:focus,
+.registration-form textarea:focus {
+    border-color: #5b48da;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(91, 72, 218, 0.1);
+}
+
+.registration-form input::placeholder,
+.registration-form textarea::placeholder {
+    color: #a0a6b3;
+}
+
+.registration-form button {
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 30px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b48da,
+            #7563e8
+        );
+
+    color: white;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 25px rgba(91, 72, 218, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.registration-form button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(91, 72, 218, 0.32);
+}
+
+
+/* =========================================================
+   SUCCESS PAGE
+========================================================= */
+
+.success-page {
+    width: 100%;
+
+    min-height: calc(100vh - 76px);
+
+    padding: 70px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(91, 72, 218, 0.1),
+            transparent 30%
+        ),
+        #f8f9ff;
+}
+
+.success-card {
+    width: min(620px, 100%);
+
+    padding: clamp(35px, 7vw, 60px) 30px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7ef;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 70px rgba(30, 35, 80, 0.12);
+}
+
+.success-icon {
+    width: 78px;
+    height: 78px;
+
+    margin:
+        0 auto
+        20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f9ef;
+
+    color: #18a957;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.error-icon {
+    background: #fff0f0;
+
+    color: #e53935;
+}
+
+.success-card h1 {
+    margin-bottom: 10px;
+
+    color: #202434;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+
+    line-height: 1.2;
+}
+
+.success-card p {
+    max-width: 500px;
+
+    margin:
+        0 auto
+        28px;
+
+    color: #747b8c;
+
+    font-size: 0.86rem;
+}
+
+.success-card a {
+    display: inline-flex;
+
+    min-height: 48px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 23px;
+
+    border-radius: 9px;
+
+    background: #5b48da;
+
+    color: white !important;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.success-card a:hover {
+    background: #4936c6;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    padding-top: 55px;
+
+    background: #101322;
+
+    color: #b7bdca;
+}
+
+.footer-container {
+    padding-bottom: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(150px, 1fr)
+        minmax(180px, 1fr);
+
+    gap: 45px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.footer-brand img {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    object-fit: contain;
+}
+
+.footer-brand strong {
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.8rem;
+}
+
+.footer-brand p {
+    color: #7f8797;
+
+    font-size: 0.68rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #aeb5c3;
+
+    font-size: 0.72rem;
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-address strong {
+    color: white;
+
+    font-size: 0.8rem;
+}
+
+.footer-address p {
+    margin-top: 9px;
+
+    color: #8991a1;
+
+    font-size: 0.72rem;
+}
+
+.footer-bottom {
+    padding:
+        20px
+        0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid #292d3a;
+
+    color: #727a8b;
+
+    font-size: 0.64rem;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1440px+
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .navbar,
+    .hero-container,
+    .feature-container,
+    .content-section,
+    .why-container,
+    .professor-profile,
+    .footer-container,
+    .footer-bottom {
+        width: min(1300px, calc(100% - 80px));
+    }
+
+    .hero-container {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .content-section {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+}
+
+
+/* =========================================================
+   4K / VERY LARGE SCREENS
+========================================================= */
+
+@media (min-width: 2000px) {
+
+    .navbar,
+    .hero-container,
+    .feature-container,
+    .content-section,
+    .why-container,
+    .professor-profile,
+    .footer-container,
+    .footer-bottom {
+        width: min(1400px, calc(100% - 120px));
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .hero-container {
+        min-height: 720px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   769px - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .brand {
+        min-width: 200px;
+    }
+
+    .brand-text strong {
+        font-size: 0.78rem;
+    }
+
+    .main-nav a {
+        padding: 9px 7px;
+
+        font-size: 0.72rem;
+    }
+
+    .nav-register {
+        padding: 11px 17px;
+
+        font-size: 0.75rem;
+    }
+
+    .hero-container {
+        gap: 25px;
+    }
+
+    .course-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 50%;
+
+        margin: auto;
+    }
+
+    .why-container {
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   601px - 768px
+========================================================= */
+
 @media (max-width: 768px) {
-    .professor-info {
-        grid-template-columns: 1fr;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .logo {
-        position: static;
-        margin-bottom: 1rem;
-    }
-    
-    #advantages-list {
-        grid-template-columns: 1fr;
+
+    html {
+        scroll-padding-top: 10px;
     }
 
-    .image-row {
+    .site-header {
+        position: relative;
+    }
+
+    .navbar {
+        width: calc(100% - 28px);
+
+        min-height: auto;
+
+        padding: 12px 0;
+
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        min-width: 0;
+
+        margin-right: auto;
+    }
+
+    .brand img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-text strong {
+        font-size: 0.76rem;
+    }
+
+    .brand-text span {
+        font-size: 0.53rem;
+    }
+
+    .nav-register {
+        padding: 10px 16px;
+    }
+
+    .main-nav {
+        order: 3;
+
+        width: 100%;
+
+        flex: 0 0 100%;
+
+        justify-content: flex-start;
+
+        gap: 2px;
+
+        overflow-x: auto;
+
+        padding: 5px 0 2px;
+
+        scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav a {
+        flex-shrink: 0;
+
+        padding: 8px 10px;
+
+        font-size: 0.7rem;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: calc(100% - 32px);
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 25px;
+    }
+
+    .hero-content {
+        padding: 50px 0 15px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 440px;
+
+        max-width: 600px;
+
+        margin: auto;
+    }
+
+
+    /* FEATURES */
+
+    .quick-features {
+        margin-top: 0;
+    }
+
+    .feature-container {
+        width: calc(100% - 30px);
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-feature {
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .quick-feature:nth-child(2) {
+        border-right: 0;
+    }
+
+
+    /* SECTIONS */
+
+    .content-section {
+        width: calc(100% - 30px);
+
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+
+    /* WHY */
+
+    .why-section {
+        padding: 75px 0;
+    }
+
+    .why-container {
+        width: calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .why-image {
+        width: min(550px, 100%);
+
+        margin: auto;
+    }
+
+    .why-content {
+        text-align: center;
+    }
+
+    .check-list {
+        text-align: left;
+    }
+
+
+    /* PROFESSOR */
+
+    .professor-profile {
+        width: calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .faculty-details {
+        justify-content: center;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        width: calc(100% - 30px);
+
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+    .cta-content {
         flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        width: calc(100% - 30px);
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 30px);
     }
 }
 
-@media (max-width: 480px) {
-    main {
-        padding: 0 0.5rem;
+
+/* =========================================================
+   MOBILE
+   0px - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
     }
-    
-    section {
-        padding: 1rem;
+
+
+    /* HEADER */
+
+    .navbar {
+        width: calc(100% - 22px);
     }
-    
+
+    .brand-text strong {
+        max-width: 185px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .nav-register {
+        padding: 9px 13px;
+
+        font-size: 0.7rem;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: calc(100% - 24px);
+    }
+
+    .hero-content {
+        padding-top: 42px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.05rem, 10vw, 2.8rem);
+
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 0.82rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+
+        margin-top: 30px;
+    }
+
+    .hero-visual {
+        height: 380px;
+    }
+
+    .hero-circle {
+        width: 285px;
+    }
+
+    .hero-circle-small {
+        width: 225px;
+    }
+
+    .professor-ring {
+        width: 200px;
+        height: 260px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .physics-symbol {
+        width: 48px;
+
+        font-size: 0.55rem;
+    }
+
+    .symbol-one {
+        top: 35px;
+        right: 10px;
+    }
+
+    .symbol-two {
+        bottom: 35px;
+        right: 5px;
+    }
+
+    .symbol-three {
+        top: 100px;
+        left: 0;
+    }
+
+
+    /* FEATURES */
+
+    .feature-container {
+        width: calc(100% - 22px);
+
+        border-radius: 13px;
+    }
+
+    .quick-feature {
+        padding: 16px 11px;
+
+        gap: 8px;
+    }
+
+    .feature-icon {
+        width: 37px;
+        height: 37px;
+
+        font-size: 1rem;
+    }
+
+    .quick-feature strong {
+        font-size: 0.64rem;
+    }
+
+    .quick-feature span {
+        font-size: 0.52rem;
+    }
+
+
+    /* SECTIONS */
+
+    .content-section {
+        width: calc(100% - 24px);
+
+        margin-top: 65px;
+        margin-bottom: 65px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-heading p {
+        font-size: 0.76rem;
+    }
+
+
+    /* COURSE */
+
+    .course-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .course-card {
+        padding: 23px 20px;
+    }
+
+    .course-card p {
+        min-height: auto;
+    }
+
+
+    /* EXPLORE */
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .explore-card:last-child {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+    .explore-card > img {
+        height: 200px;
+    }
+
+
+    /* WHY */
+
+    .why-section {
+        padding: 65px 0;
+    }
+
+    .why-container {
+        width: calc(100% - 24px);
+    }
+
+    .why-image {
+        padding: 12px;
+    }
+
+    .why-image img {
+        height: 330px;
+
+        border-radius: 20px;
+    }
+
+    .why-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .check-list {
+        grid-template-columns: 1fr;
+
+        gap: 11px;
+    }
+
+
+    /* PROFESSOR */
+
+    .professor-profile {
+        width: calc(100% - 24px);
+
+        padding: 25px 17px;
+
+        border-radius: 20px;
+    }
+
+    .professor-photo img {
+        width: 215px;
+        height: 275px;
+    }
+
+    .professor-info h3 {
+        font-size: 1.45rem;
+    }
+
+    .faculty-details {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 13px;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        width: calc(100% - 24px);
+
+        padding: 32px 22px;
+
+        border-radius: 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.65rem;
+    }
+
+
+    /* REGISTRATION */
+
+    .registration-page {
+        min-height: calc(100vh - 70px);
+
+        padding:
+            35px
+            12px
+            55px;
+    }
+
     .registration-form {
-        padding: 1rem;
+        width: 100%;
+
+        padding: 32px 18px;
+
+        border-radius: 19px;
     }
+
+    .registration-form h2 {
+        font-size: 1.55rem;
+    }
+
+    .registration-form > p {
+        font-size: 0.75rem;
+    }
+
+    .registration-form input,
+    .registration-form select {
+        min-height: 50px;
+    }
+
+    .registration-form textarea {
+        min-height: 100px;
+    }
+
+
+    /* SUCCESS */
+
+    .success-page {
+        min-height: calc(100vh - 70px);
+
+        padding:
+            45px
+            12px;
+    }
+
+    .success-card {
+        padding: 40px 18px;
+
+        border-radius: 20px;
+    }
+
+    .success-icon {
+        width: 68px;
+        height: 68px;
+
+        font-size: 1.8rem;
+    }
+
+    .success-card h1 {
+        font-size: 1.55rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding-top: 40px;
+    }
+
+    .footer-container {
+        width: calc(100% - 24px);
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding-bottom: 35px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 24px);
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   320px - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text strong {
+        max-width: 145px;
+
+        font-size: 0.68rem;
+    }
+
+    .brand-text span {
+        font-size: 0.47rem;
+    }
+
+    .nav-register {
+        padding: 8px 10px;
+
+        font-size: 0.64rem;
+    }
+
+    .main-nav a {
+        padding: 7px 8px;
+
+        font-size: 0.64rem;
+    }
+
+    .hero h1 {
+        font-size: 1.95rem;
+    }
+
+    .hero-visual {
+        height: 340px;
+    }
+
+    .hero-circle {
+        width: 250px;
+    }
+
+    .hero-circle-small {
+        width: 195px;
+    }
+
+    .professor-ring {
+        width: 175px;
+        height: 230px;
+    }
+
+    .physics-symbol {
+        display: none;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-feature {
+        border-right: 0;
+
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .quick-feature:last-child {
+        border-bottom: 0;
+    }
+
+    .registration-form {
+        padding: 28px 15px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .hero-container {
+        min-height: auto;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(260px, 0.8fr);
+    }
+
+    .hero-content {
+        padding: 40px 0;
+    }
+
+    .hero-visual {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .course-card:hover,
+    .explore-card:hover,
+    .primary-btn:hover,
+    .secondary-btn:hover,
+    .nav-register:hover,
+    .cta-button:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   SAFE IMAGE HANDLING
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+.hero img,
+.professor-photo img,
+.why-image img,
+.explore-card img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f1f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7667df;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5b48da;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: #5b48da;
+
+    color: white;
 }

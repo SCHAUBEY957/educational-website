@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registration Successful | Brilliant Physics Tutorial
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+    <div class="navbar">
+
+        <a href="/" class="brand">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Brilliant Physics Tutorial"
+            >
+
+            <div class="brand-text">
+
+                <strong>
+                    BRILLIANT PHYSICS TUTORIAL
+                </strong>
+
+                <span>
+                    PATH TO SUCCESS
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/#courses">
+                Courses
+            </a>
+
+            <a href="/#prospectus">
+                Prospectus
+            </a>
+
+            <a href="/#achievements">
+                Achievements
+            </a>
+
+            <a href="/#events">
+                Events
+            </a>
+
+        </nav>
+
+
+        <a
+            href="/register"
+            class="nav-register"
+        >
+            Register
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= SUCCESS ================= -->
+
+<main class="success-page">
+
+    <div class="success-card">
+
+
+        {% if error %}
+
+            <div class="success-icon error-icon">
+                !
+            </div>
+
+            <h1>
+                Registration Failed
+            </h1>
+
+            <p>
+                Something went wrong while saving your
+                registration. Please try again.
+            </p>
+
+            <a href="/register">
+                Try Again →
+            </a>
+
+
+        {% else %}
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h1>
+                Registration Successful!
+            </h1>
+
+
+            {% if name %}
+
+            <p>
+                Thank you,
+                <strong>{{ name }}</strong>.
+                Your data has been saved successfully.
+            </p>
+
+            {% else %}
+
+            <p>
+                Your registration has been submitted
+                successfully. Our team will contact you soon.
+            </p>
+
+            {% endif %}
+
+
+            <a href="/register">
+                Register Another Student →
+            </a>
+
+
+        {% endif %}
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Logo"
+            >
+
+            <div>
+
+                <strong>
+                    BRILLIANT PHYSICS TUTORIAL
+                </strong>
+
+                <p>
+                    Path to Success
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/#courses">
+                Courses
+            </a>
+
+            <a href="/#prospectus">
+                Prospectus
+            </a>
+
+            <a href="/#achievements">
+                Achievements
+            </a>
+
+            <a href="/#events">
+                Events
+            </a>
+
+        </div>
+
+
+        <div class="footer-address">
+
+            <strong>
+                Visit Us
+            </strong>
+
+            <p>
+                Brilliant Physics Tutorial<br>
+                Chandmari, Motihari<br>
+                Bihar - 845401
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2025 Brilliant Physics Tutorial.
+            All Rights Reserved.
+        </span>
+
+        <span>
+            Path to Success
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
